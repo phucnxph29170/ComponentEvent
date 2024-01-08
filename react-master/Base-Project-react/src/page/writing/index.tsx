@@ -14,7 +14,7 @@ const Writing = (props: Props) => {
   const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTextareaValue(event.target.value);
   }
-  return (
+  return ( 
     <div className="w-1/2 m-auto">
         <div className="">
             <div className="grid grid-cols-2">
