@@ -8,7 +8,6 @@ type Props = {}
 const Writing = (props: Props) => {
   const [textareaValue, setTextareaValue] = useState('');
   const handleClickWrite = () => {
-    // Hiển thị cảnh báo với nội dung từ textarea
     alert(textareaValue);
   }
   const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

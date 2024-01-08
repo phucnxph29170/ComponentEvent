@@ -1,16 +1,18 @@
 import BigButton from '@/components/bigbutton'
 import Button from '@/components/button'
 import Content from '@/components/content'
-import TextArea from '@/components/textarea'
 import React, { useState } from 'react'
 
 type Props = {}
 
 const Reading = (props: Props) => {
-  const [state, setState] = useState(1);
-    const handleClickWrite = () =>{
-        setState(1)
-    }
+  const [textareaValue, setTextareaValue] = useState('');
+  const handleClickWrite = () => {
+    alert(textareaValue);
+  }
+  const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setTextareaValue(event.target.value);
+  }
   return (
     <div className="w-1/2 m-auto">
         <div className="">
@@ -19,7 +21,13 @@ const Reading = (props: Props) => {
                 <Button text="From Your Speech"/>
             </div>
             <p className="text-2xl font-semibold mt-2 mb-2">From Your Speech</p>
-            <TextArea/>
+            <textarea 
+            value={textareaValue}
+            onChange={handleTextareaChange}
+            className='w-full h-36 border-solid border-gray-300 border-2 rounded p-2 mt-2' 
+            placeholder='Type or paste your topic here'>
+
+            </textarea>
             <BigButton text='Generate Quizz' onClick={handleClickWrite}/>
             <Content/>
         </div>
